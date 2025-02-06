@@ -5,6 +5,10 @@ URL = f'https://api.github.com/repos/{REPO}/commits'
 
 response = requests.get(URL)
 
+print('\n========================================================')
+print('===================== Author & Commits =================')
+print('========================================================')
+
 if response.status_code == 200:
     commits = response.json()
     for commit in commits:
@@ -13,3 +17,6 @@ if response.status_code == 200:
         print(f'Author: {author_name}, Commit Message: {commit_message}')
 else:
     print(f'Failed to fetch commits: {response.status_code}')
+
+print('\n========================================================')
+print('========================================================')
